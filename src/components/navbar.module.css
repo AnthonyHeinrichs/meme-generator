@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap');
+
+.navbar {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: #F55A5A;
+  height: 65px;
+}
+
+.navText {
+  margin-left: 7px;
+  color: white;
+  font-family: Karla, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.1em;
+}
+
+.navIcon {
+  width: 31px;
+  height: 26px;
+  margin-left: 20px;
+}

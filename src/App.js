@@ -1,9 +1,12 @@
-import './App.css';
+import Navbar from './components/navbar'
+import MemeMaker from './components/meme'
 
 function App() {
   return (
-    <div className="App">
-    </div>
+  <div>
+    <Navbar />
+    <MemeMaker />
+  </div>
   );
 }
 
