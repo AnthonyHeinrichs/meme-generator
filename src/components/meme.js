@@ -3,7 +3,7 @@ import styles from './meme.module.css'
 import memeData from './memesData'
 
 const MemeMaker = () => {
-  const [memeImage, setMemeImage] = React.useState('')
+  const [memeImage, setMemeImage] = React.useState('https://i.imgflip.com/1bgw.jpg')
 
   function getMemeImage(e) {
     e.preventDefault()
@@ -21,7 +21,9 @@ const MemeMaker = () => {
         <input type='text' placeholder='bottom text' className={styles.formInput}/>
         <button onClick={getMemeImage} className={styles.button}>Get a new meme</button>
       </form>
-      <img src={memeImage} alt='Meme' className={styles.memeImg} />
+      <div className={styles.center}>
+        <img src={memeImage} alt='Meme' className={styles.memeImg} />
+      </div>
     </main>
   )
 }

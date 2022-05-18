@@ -15,6 +15,7 @@
   border-radius: 5px;
   border: 1px solid #D5D4D8;
   text-indent: 5px;
+  font-family: Karla, sans-serif;
 }
 
 .button {
@@ -22,10 +23,17 @@
   border-radius: 5px;
   cursor: pointer;
   color: white;
-  background-color: #F55A5A
+  background-color: #F55A5A;
+  font-family: Karla, sans-serif;
 }
 
 .memeImg {
   max-width: 100%;
   margin-top: 16px;
+
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }
