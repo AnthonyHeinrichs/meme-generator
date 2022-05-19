@@ -3,15 +3,26 @@ import styles from './meme.module.css'
 import memeData from './memesData'
 
 const MemeMaker = () => {
-  const [memeImage, setMemeImage] = React.useState('https://i.imgflip.com/1bgw.jpg')
+
+  const [memesObject, setMemesObject] = React.useState (
+    {
+      topText: '',
+      bottomText: '',
+      randomImage: 'https://i.imgflip.com/1bgw.jpg'
+    }
+  )
+
+  const [allMemeImages, setAllMemeImages] = React.useState (memeData)
 
   function getMemeImage(e) {
     e.preventDefault()
 
-    const memesArray = memeData.data.memes
+    const memesArray = allMemeImages.data.memes
     const randomNumber = Math.floor(Math.random() * memesArray.length)
-    setMemeImage(memesArray[randomNumber].url)
-    console.log(memeImage)
+    setMemesObject(prevState => ({
+      ...prevState,
+      randomImage: memesArray[randomNumber].url
+    }))
   }
 
   return (
@@ -22,7 +33,7 @@ const MemeMaker = () => {
         <button onClick={getMemeImage} className={styles.button}>Get a new meme</button>
       </form>
       <div className={styles.center}>
-        <img src={memeImage} alt='Meme' className={styles.memeImg} />
+        <img src={memesObject.randomImage} alt='Meme' className={styles.memeImg} />
       </div>
     </main>
   )
