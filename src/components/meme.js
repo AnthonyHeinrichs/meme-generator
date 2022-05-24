@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './meme.module.css'
-import memeData from './memesData'
 
 const MemeMaker = () => {
 
@@ -12,12 +11,19 @@ const MemeMaker = () => {
     }
   )
 
-  const [allMemeImages, setAllMemeImages] = React.useState(memeData)
+  const [allMemeImages, setAllMemeImages] = React.useState([])
+
+  React.useEffect(() => {
+    console.log('effect ran')
+    fetch('https://api.imgflip.com/get_memes')
+      .then(res => res.json())
+      .then(data => setAllMemeImages(data.data.memes))
+  }, [])
 
   function getMemeImage(e) {
     e.preventDefault()
 
-    const memesArray = allMemeImages.data.memes
+    const memesArray = allMemeImages
     const randomNumber = Math.floor(Math.random() * memesArray.length)
     setMeme(prevState => ({
       ...prevState,
